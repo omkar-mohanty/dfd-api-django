@@ -16,7 +16,7 @@ def index(request):
         if form.is_valid():
             print("Form Valid")
             similarity = get_similarity(request)
-            return HttpResponseRedirect("/result/%s/" % similarity)
+            return HttpResponse("The documents are %s similar" % similarity)
 
     else:
         form = UploadFileForm()
@@ -33,8 +33,8 @@ def get_similarity(request):
     
     doc_sim = DocumentSimilarity()
     
-    doc1_text = doc_sim.ocr_conversion(image1)
-    doc2_text = doc_sim.ocr_conversion(image2)
+    doc1_text = doc_sim.ocr_conversion(image1[0])
+    doc2_text = doc_sim.ocr_conversion(image2[0])
 
     documents = [doc_sim.preprocess(doc1_text), doc_sim.preprocess(doc2_text)]
     doc_vectors = doc_sim.vectorize(documents)

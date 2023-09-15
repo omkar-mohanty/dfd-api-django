@@ -2,6 +2,8 @@ import pytesseract
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
+pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+
 class DocumentSimilarity:
     def __init__(self):
         self.vectorizer = TfidfVectorizer()

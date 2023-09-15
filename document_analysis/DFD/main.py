@@ -11,7 +11,7 @@ TEMPLATES_DIR = "data/templates"
 os.makedirs(TEMPLATES_DIR, exist_ok=True)
 
 def main():
-    # image_paths = convert_pdf_to_image(pdf_path="./data/raw_documents/10089969_2020_010.pdf", output_folder="./data/processed_images")
+    image_paths = convert_pdf_to_image(pdf_path="./data/raw_documents/10089969_2020_010.pdf", output_folder="./data/processed_images")
     # image_path = image_paths[0]
     # store_template(image_path, TEMPLATES_DIR)
     
